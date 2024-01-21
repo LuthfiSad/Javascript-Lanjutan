@@ -1,0 +1,23 @@
+ [
+    {
+        "nama": "Ujang",
+        "nrp": "02434234",
+        "email": "ujang@gmail.com",
+        "jurusan": "Teknik Ancaman",
+        "idDosenWali": 1
+    },
+    {
+        "nama": "Kijing",
+        "nrp": "02434235",
+        "email": "kijing@gmail.com",
+        "jurusan": "Teknik Menjait",
+        "idDosenWali": 2
+    },
+    {
+        "nama": "Anjay",
+        "nrp": "02434236",
+        "email": "anjay@gmail.com",
+        "jurusan": "Teknik Menyuci",
+        "idDosenWali": 2
+    }
+]

@@ -1,0 +1,86 @@
+// // CallBack
+
+// // Synchronous Callback
+// // function halo(nama) {
+// //     alert(`Halo ${nama}`);
+// // }
+// function tampilkanPesan(callback){
+//     const nama = prompt('Masukan Nama = ');
+//     callback(nama);
+// }
+// // lebih simple
+// tampilkanPesan((nama) => alert(`Halo ${nama}`));
+
+
+// const mhs = [
+//     {
+//         "nama": "Ujang",
+//         "nrp": "02434234",
+//         "email": "ujang@gmail.com",
+//         "jurusan": "Teknik Ancaman",
+//         "idDosenWali": 1
+//     },
+//     {
+//         "nama": "Kijing",
+//         "nrp": "02434235",
+//         "email": "kijing@gmail.com",
+//         "jurusan": "Teknik Menjait",
+//         "idDosenWali": 2
+//     },
+//     {
+//         "nama": "Anjay",
+//         "nrp": "02434236",
+//         "email": "anjay@gmail.com",
+//         "jurusan": "Teknik Menyuci",
+//         "idDosenWali": 2
+//     }
+// ];
+// // Agak Lama Karena Synchronous, atau blocking
+// console.log('mulai');
+// mhs.forEach(m => {
+//     for(let i = 0; i<10000000;i++){
+//         let date = new Date();
+//     }
+//     console.log(m.nama)
+// });
+// console.log('selesai');
+
+
+// // Asynchoronous Callback
+// Jika Menggunakan Ajax Native
+// function getDataMahasiswa(url, success, error) {
+//     let xhr = new XMLHttpRequest();
+//     xhr.onreadystatechange = function () {
+//         if (xhr.readyState === 4) {
+//             if (xhr.status===200) {
+//                 success(xhr.response);
+//             } else if (xhr.status===400) {
+//                 error();
+//             }
+//         }
+//     }
+//     xhr.open('get', url);
+//     xhr.send();
+// }
+// console.log('Mulai');
+// getDataMahasiswa('mahasiswa.json', (result)=>{
+//     const mhs = JSON.parse(result);
+//     mhs.forEach(m => console.log(m.nama));
+// }, ()=>{
+
+// });
+// console.log('Selesai');
+
+
+// Jika Menggunakan Ajax in Jquery
+console.log('Mulai');
+$.ajax({
+    url: 'mahasiswa.jso',
+    success: (mhs)=>{
+        mhs.forEach(m => console.log(m.nama));
+    },
+    error: (e)=>{
+        console.log(e.responseText);
+    }
+})
+console.log('Selesai');
